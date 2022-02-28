@@ -1,0 +1,10 @@
+1] User booking info
+ select user_first_name,user_last_name, court_id, start_date, end_date from user_info_table inner join booking_table using(user_id);
+
+2] Monthly booking
+select * from booking_table where start_date >= '2022-02-01' and start_date <= '2022-02-28';
+
+3] owner to clubs
+select owner_first_name, owner_last_name, club_name from owner_info_table inner join club_info_table on owner_info_table.owner_id = club_info_table.owner_id;
+
+4]

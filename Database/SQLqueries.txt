@@ -1,0 +1,33 @@
+1] Create User Table 
+create table user_info_table (user_id int auto_increment primary key, user_first_name varchar(100),
+user_last_name varchar(100), user_email varchar(100), user_password varchar(100), user_moblie_no varchar(100),
+user_gender varchar(10), user_address varchar(100), user_security_que varchar(100), user_security_ans varchar(100));
+
+2] Create Owner Table
+create table owner_info_table (owner_id int auto_increment primary key, owner_first_name varchar(100),
+owner_last_name varchar(100), owner_email varchar(100), owner_password varchar(100), owner_moblie_no varchar(100),
+owner_security_que varchar(100), owner_security_ans varchar(100), owner_isactive tinyint);
+
+3] Create Club Table
+create table club_info_table (club_id int auto_increment primary key, club_name varchar(100),
+no_of_courts int, city varchar(100), pincode int, club_address varchar(100), club_status varchar(50), 
+owner_id int , FOREIGN KEY (owner_id) REFERENCES owner_info_table(owner_id) );
+
+4] Create Court Table
+create table court_info_table (court_id int auto_increment primary key, court_no int,
+court_start_time int, court_end_time int, court_desc varchar(100), court_charge_hr int,
+club_id int , FOREIGN KEY (club_id) REFERENCES club_info_table(club_id) );
+
+5] Create Booking Table
+create table booking_table (booking_id int auto_increment primary key,user_id int, court_id int,
+start_date date, end_date date, start_time int, end_time int, booking_date date, booking_status varchar(100),
+total_amount int, payment_status tinyint, isActive tinyint); 
+
+6]Create Feedback Table
+create table feedback_table (feedback_id int auto_increment primary key, user_name varchar(50), court_id int,
+rating int check(rating>=0 and rating<=5) , comments varchar(50));
+
+
+
+
+

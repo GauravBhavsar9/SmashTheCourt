@@ -1,0 +1,57 @@
+*INSERT QUERIES*
+
+1]For user_info_table
+
+insert into user_info_table values(1,'akash','kohli','kohli@gmail.com','akash123','9876543210','male', 'shastri nagar pune','what is your first school name?','MMJ school');
+insert into user_info_table values(2,'pravin','tare','tare11@gmail.com','tare123','9876443210','male','shivaji nagar pune','what is your first school name?','vvi school');
+insert into user_info_table values(3,'arjun','pande','pande123@gmail.com','arjun123','8875743210','male', 'kalamboli mumbai','what is your first pet name?','brick');
+
+2]For owner_info_table
+
+insert into owner_info_table values(1,'sunil','pande','pande12@gmail.com','ar123','9899743210', 'which is your favourite place name?','Mumbai', true);
+insert into owner_info_table values(2,'madhuri','kant','kant12@gmail.com','madhuri@11','9569743210','which is your favourite movie name?','pushpa', false);
+insert into owner_info_table values(3,'shikant','tiwari','tiwari@gmail.com','shir@11','9685743210','which is your favourite movie name?','the outlaws', true);
+
+3]For club_info_table  
+
+insert into club_info_table values(1,'white tigers',2,'mumbai',446521,'shastri nagar pune','open',1);
+insert into club_info_table values(2,'daredevils',1,'pune',446121,'swargate pune','open',1);
+insert into club_info_table values(3,'lions den',2,'pune',445424,'kothrud pune','close',2);
+insert into club_info_table values(4,'smashers',1,'mumbai',443101,'kalamboli mumbai','open',3);
+insert into club_info_table values(5,'ZP king',1,'jalgaon',446654,'rajguru nagar jalgaon','close',1);
+
+4]For court_info_table
+
+insert into court_info_table values(1,101,12,20,'wooden',100,1);
+insert into court_info_table values(2,102,12,20,'synthetic',100,1);
+insert into court_info_table values(3,201,10,20,'synthetic',150,2);
+insert into court_info_table values(4,301,10,20,'wooden',150,3);
+insert into court_info_table values(5,302,10,20,'synthetic',150,3);
+insert into court_info_table values(6,402,9,21,'synthetic',175,4);
+insert into court_info_table values(7,501,15,21,'wooden',130,5);
+
+5]For booking_table
+
+insert into booking_table values(1,1,101,'2022-02-10','2022-03-10',15,16,'2022-02-08','booked',2800,true,true);
+insert into booking_table values(2,2,301,'2022-01-01','2022-02-01',13,14,'2021-12-30','booked',3100,true,false);
+insert into booking_table values(3,3,402,'2022-03-12','2022-04-12',13,14,'2021-12-30','unbooked',5250,false,false);
+insert into booking_table values(4,1,501,'2022-04-01','2022-05-01',17,18,'2022-03-29','booked',3900,true,false);
+
+6]For feedback_table
+
+insert into feedback_table values(1,'akash kohli',101,5,'best court ever seen');
+insert into feedback_table values(2,'pravin tare',301,3,'good court');
+insert into feedback_table values(3,'arjun pande',401,4,'good and superbb court');
+
+
+
+
+
+
+
+
+
+
+
+
+

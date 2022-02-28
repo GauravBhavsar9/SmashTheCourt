@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    
+<link rel="stylesheet" href="./font-awesome.min.css">
+    <title>Payment</title>
+
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+* {
+    padding: 0;
+    margin: 0
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee
+}
+
+.container .card {
+    height: 400px;
+    width: 800px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif
+}
+
+.container .card .form {
+    width: 100%;
+    height: 100%;
+    display: flex
+}
+
+.container .card .left-side {
+    width: 40%;
+    background-color: #000;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s
+}
+
+.left-side .success {
+    position: absolute;
+    top: 39%;
+    z-index: 2000;
+    left: -100%;
+    font-weight: 900;
+    font-size: 60px;
+    color: blue;
+    transition: all 1s
+}
+
+.left-side .success_done {
+    left: 35%
+}
+
+.left-side .success_final {
+    left: 100%
+}
+
+.image {
+    width: 100%;
+    height: 100%
+}
+
+.image img {
+    object-fit: cover;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%
+}
+
+.debit-card {
+    height: 160px;
+    width: 100%;
+    background-color: #4b9aff;
+    position: absolute;
+    top: 130px;
+    left: 10px;
+    opacity: 1;
+    border-radius: 10px;
+    padding: 0 20px;
+    box-sizing: border-box
+}
+
+.card_name {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    color: #fff
+}
+
+.card_name small {
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight: 900
+}
+
+.card_name span {
+    font-size: 12px;
+    margin-bottom: 20px;
+    font-weight: 600
+}
+
+.num_expiry {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff
+}
+
+.card_number,
+.card_cvv {
+    display: flex;
+    flex-direction: column
+}
+
+.num_expiry small {
+    font-size: 13px;
+    font-weight: 900
+}
+
+.num_expiry span {
+    font-size: 12px;
+    margin-bottom: 20px;
+    font-weight: 600
+}
+
+.wide {
+    width: 100% !important;
+    transition: all 1s
+}
+
+.hide_right {
+    animation: anim 1s forwards
+}
+
+@keyframes anim {
+    from {
+        right: 0;
+        opacity: 1
+    }
+
+    to {
+        right: 150px;
+        opacity: 0;
+        display: none
+    }
+}
+
+.container .card .right-side {
+    width: 60%;
+    background-color: #fff;
+    height: 100%;
+    padding: 0 40px;
+    box-sizing: border-box
+}
+
+.right-side h3 {
+    margin-top: 30px;
+    margin-left: 10px
+}
+
+.input-text {
+    position: relative;
+    margin-top: 30px
+}
+
+input[type="text"] {
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid #b9c7da;
+    padding: 0 10px;
+    box-sizing: border-box
+}
+
+.input-text span {
+    position: absolute;
+    left: 10px;
+    top: -13px;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.input-div {
+    display: flex;
+    gap: 10px;
+    width: 100%
+}
+
+.input-div .input-text {
+    width: 50%
+}
+
+.button {
+    margin-top: 30px
+}
+
+.d-none {
+    display: none !important
+}
+
+.button button {
+    height: 40px;
+    width: 120px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 12px;
+    background-color: #4597ff;
+    cursor: pointer;
+    transition: all 0.5s
+}
+
+.button button:hover {
+    background-color: blue
+}
+
+.warning {
+    border-bottom: 1px solid red !important
+}
+
+@media (max-width:650px) {
+    .container .card {
+        max-width: 350px
+    }
+
+    .container .card .right-side {
+        width: 100%
+    }
+
+    .container .card .left-side {
+        display: none
+    }
+}
+
+    </style>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+for (const el of document.querySelectorAll("[placeholder][data-slots]")) {
+const pattern = el.getAttribute("placeholder"),
+slots = new Set(el.dataset.slots || "_"),
+prev = (j => Array.from(pattern, (c,i) => slots.has(c)? j=i+1: j))(0),
+first = [...pattern].findIndex(c => slots.has(c)),
+accept = new RegExp(el.dataset.accept || "\\d", "g"),
+clean = input => {
+input = input.match(accept) || [];
+return Array.from(pattern, c =>
+input[0] === c || slots.has(c) ? input.shift() || c : c
+);
+},
+format = () => {
+const [i, j] = [el.selectionStart, el.selectionEnd].map(i => {
+i = clean(el.value.slice(0, i)).findIndex(c => slots.has(c));
+return i<0? prev[prev.length-1]: back? prev[i-1] || first: i; }); el.value=clean(el.value).join``; el.setSelectionRange(i, j); back=false; }; let back=false; el.addEventListener("keydown", (e)=> back = e.key === "Backspace");
+    el.addEventListener("input", format);
+    el.addEventListener("focus", format);
+    el.addEventListener("blur", () => el.value === pattern && (el.value=""));
+    }
+    });
+
+    var user_name = document.querySelector(".user_name");
+    var set_card_number = document.querySelector(".set_card_number");
+    var user_cardcvv = document.querySelector(".user_card_cvv")
+    var user_name_input = document.getElementById("user_name_input");
+    var user_card_number_input= document.getElementById("user_card_number_input");
+    function userName(name){
+
+    user_name.innerHTML = name;
+    }
+
+    function userCardNumber(cardNumber){
+    set_card_number.innerHTML = cardNumber;
+    }
+
+    function usercardcvv(cvv){
+    user_cardcvv.innerHTML=cvv;
+    }
+
+    var card=document.querySelector(".debit-card");
+    var click_pay = document.querySelector(".click-pay");
+    var left_side = document.querySelector(".left-side");
+    var right_side = document.querySelector(".right-side");
+    var success = document.querySelector(".success");
+    click_pay.addEventListener('click',function(){
+
+
+    if(!validateform()){
+    return false;
+    }
+    right_side.style.display="none";
+    left_side.classList.toggle('wide');
+    left_side.style.display="block";
+    card.classList.add('d-none');
+
+    setTimeout(function(){
+    success.classList.add('success_done');
+    }, 2000);
+
+    setTimeout(function(){
+    success.classList.add('success_final');
+    }, 4000);
+
+    });
+
+    function validateform(){
+    validate=true;
+    var validate_inputs=document.querySelectorAll(".right-side input");
+
+    validate_inputs.forEach(function(input_valid){
+    input_valid.classList.remove('warning');
+    if(input_valid.hasAttribute('require')){
+    if(input_valid.value.length==0){
+    validate=false;
+    input_valid.classList.add('warning');
+    }
+    }
+    });
+    return validate;
+    }
+
+    // validate_inputs.classList.remove('warning');
+    // if(validate_inputs has)
+</script>
+
+
+</head>
+<body>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Smash The Court</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+           
+          </ul>
+        </div>
+      </nav>
+
+
+
+      <div class="container">
+        <div class="card">
+            <div class="form">
+                <div class="left-side"> <span class="success">Success</span>
+                    <div class="image"> <img src="https://imgur.com/QrKJmrf.jpg"> </div>
+                    <div class="debit-card">
+                        <div class="card_name"> <small>Cardholder name</small> <span class="user_name">John Doe</span> </div>
+                        <div class="num_expiry">
+                            <div class="card_number"> <small>Card Number</small> <span class="set_card_number">0000 0000 0000 0000</span> </div>
+                            <div class="card_cvv"> <small>Valid upto</small> <span class="user_card_cvv">MM/YYYY</span> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <h3>Payment details</h3>
+                    <div class="input-text"> <input type="text" id="user_name_input" onkeyup="userName(this.value)" placeholder="Username" require> <span>Cardholder name</span> </div>
+                    <div class="input-text"> <input type="text" id="user_card_number_input" placeholder="0000 0000 0000 0000" onkeyup="userCardNumber(this.value)" data-slots="0" data-accept="\d" require> <span>Card number</span> </div>
+                    <div class="input-div">
+                        <div class="input-text"> <input type="text" onkeyup="usercardcvv(this.value)" placeholder="MM/YYYY" data-slots="MY" require> <span>Valid upto</span> </div>
+                        <div class="input-text "> <input type="text" placeholder="000" data-slots="0" data-accept="\d" size="3" require> <span>CVV</span> </div>
+                    </div>
+                    <div class="button"> <button class="click-pay">Pay $25.99</button> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+      <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2);">
+        2022 © Smash The Court.
+    </div>
+</body>
+</html>

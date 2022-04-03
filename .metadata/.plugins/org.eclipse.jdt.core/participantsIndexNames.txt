@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-D:\CDAC IET\Project\Coding\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2702302312.index
-\SmashTheCourt\src\main\java
